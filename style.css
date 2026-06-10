@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url("https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExOWd2eXBtcG9wNTd1eW41d25ubDR1NWVvbm5iZG9hODNwbXRzcmgzMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UVk5yzljef0kGiayL1/giphy.gif");
+    /* background-size: cover; */
+}
+
+
+.topbar {
+    display: flex; 
+    justify-content: space-between;
+    background-color: rgba(67, 67, 67, 0.25);
+    color: white;
+    border-radius: 10px;
+    backdrop-filter: blur(16px);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    
+}
+
+
+.battery-icon {
+    /* Set a reasonable size that matches your text font-size */
+    height: 1em; 
+    width: auto;
+    
+    /* Align it vertically with your "100%" text */
+    vertical-align: middle;
+    margin-right: 5px; /* Adds a tiny space between icon and text */
+
+    /* The magic trick to turn a black SVG into white */
+    filter: brightness(0) invert(1);
+}
