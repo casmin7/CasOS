@@ -50,6 +50,7 @@ body {
   backdrop-filter: blur(16px);
   border-radius: 10px;
     color: #fff;
+    overflow: hidden;
 }
 
 #windowheader {
