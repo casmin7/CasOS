@@ -3,6 +3,7 @@ body {
     padding: 0;
     background-image: url('backgrounds/background1.webp');
     /* background-size: cover; */
+    font-family: 'Funnel Sans';
 }
 
 
@@ -26,15 +27,15 @@ body {
 
 
 .battery-icon {
-    /* Set a reasonable size that matches your text font-size */
+  
     height: 1em; 
     width: auto;
     
-    /* Align it vertically with your "100%" text */
-    vertical-align: middle;
-    margin-right: 5px; /* Adds a tiny space between icon and text */
 
-    /* The magic trick to turn a black SVG into white */
+    vertical-align: middle;
+    margin-right: 5px;
+
+
     filter: brightness(0) invert(1);
 }
 
@@ -46,14 +47,14 @@ body {
     display: none;
     flex-direction: column;
     width: 200px;
-      background-color: rgba(67, 67, 67, 0.25);
-  backdrop-filter: blur(16px);
-  border-radius: 10px;
+    background-color: rgba(67, 67, 67, 0.25);
+    backdrop-filter: blur(16px);
+    border-radius: 10px;
     color: #fff;
     overflow: hidden;
 }
 
-#windowheader {
+#welcomeheader {
   padding-left: 10px;
   padding-right: 10px;
   cursor: move;
@@ -68,9 +69,9 @@ body {
 
 #welcomeclose {
   background-color: red;
-height: 16px;
-width: 16px;
-border-radius: 50%;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
   cursor: pointer;
 }
 
