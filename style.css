@@ -10,7 +10,7 @@ body {
 .topbar {
     display: flex; 
     justify-content: space-between;
-    background-color: rgba(67, 67, 67, 0.25);
+    background-color: rgba(67, 67, 67, 0.3);
     color: white;
     border-radius: 10px;
     backdrop-filter: blur(16px);
@@ -20,6 +20,7 @@ body {
     right: 10px;
     padding: 0px 10px;
     align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 
     
 }
@@ -51,6 +52,9 @@ body {
     border-radius: 10px;
     color: #fff;
     overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #welcomeheader {
@@ -83,7 +87,8 @@ body {
 
 /* Clock & Clock Panel */
 .clocklook {
-      border-radius: 10px;  
+      border-radius: 10px; 
+      padding: 10px 10px; 
 }
 
 
@@ -100,25 +105,25 @@ body {
     display: inline-block;
 }
 
-/* The Dropdown Panel Styling */
+
 #gnome-panel {
     position: absolute;
-    top: calc(100% + 8px); /* Appears just under the topbar */
+    top: calc(100% + 8px); 
     left: 50%;
-    transform: translateX(-50%); /* Centers it directly under the time text */
+    transform: translateX(-50%); 
     
     width: 280px;
-    background-color: rgba(45, 45, 45, 0.85);
-    backdrop-filter: blur(20px);
+    background-color: rgba(67, 67, 67, 0.85);
+    backdrop-filter: blur(25px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     color: white;
     padding: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    z-index: 9999; /* Ensures it sits over windows */
+    z-index: 6767;
 }
 
-/* Panel Internal Styling */
+
 .panel-section h3 {
     margin: 0 0 5px 0;
     font-size: 13px;
@@ -128,7 +133,7 @@ body {
 .placeholder-text {
     margin: 0;
     font-size: 12px;
-    color: #777;
+    color: #a1a1a1;
     text-align: center;
     padding: 15px 0;
 }
@@ -139,7 +144,7 @@ body {
     margin: 8px 0;
 }
 
-/* Utility class to handle hiding/showing elements */
+
 .hidden {
     display: none !important;
 }
