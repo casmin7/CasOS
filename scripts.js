@@ -35,8 +35,8 @@ window.addEventListener("click", function(e) {
 });
 
 
-// --- Your Existing Draggable Window Logic (Keep exactly as you have it) ---
-dragElement(document.getElementById("welcome"));
+
+
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -72,8 +72,6 @@ function dragElement(elmnt) {
   }
 }
 
-var welcomeScreen = document.getElementById("welcome");
-
 function closeWindow(element) {
     element.style.display = "none";
 }
@@ -82,13 +80,35 @@ function openWindow(element) {
   element.style.display = "flex";
 }
 
-var welcomeScreenClose = document.querySelector("#welcomeclose");
-var welcomeScreenOpen = document.querySelector("#welcomeopen");
+// var welcomeScreen = document.getElementById("welcomescreen");
+// var welcomeScreenClose = document.querySelector("#welcomeclose");
+// var welcomeScreenOpen = document.querySelector("#welcomeopen");
 
-welcomeScreenClose.addEventListener("click", function() {
-   closeWindow(welcomeScreen);
+// welcomeScreenClose.addEventListener("click", function() {
+//    closeWindow(welcomeScreen);
+// });
+
+// welcomeScreenOpen.addEventListener("click", function() {
+//    openWindow(welcomeScreen);
+// });
+
+// dragElement(welcomeScreen);
+
+function windowSetup(name) {
+  var windowScreen = document.getElementById(name + "screen");
+  var windowScreenClose = document.querySelector("#" + name + "close");
+  var windowScreenOpen = document.querySelector("#" + name + "open");
+
+  windowScreenClose.addEventListener("click", function() {
+   closeWindow(windowScreen);
 });
 
-welcomeScreenOpen.addEventListener("click", function() {
-   openWindow(welcomeScreen);
+windowScreenOpen.addEventListener("click", function() {
+   openWindow(windowScreen);
 });
+
+dragElement(windowScreen);
+}
+
+windowSetup("welcome");
+windowSetup("calc");

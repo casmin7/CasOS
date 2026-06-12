@@ -39,7 +39,7 @@ body {
     filter: brightness(0) invert(1);
 }
 
-#welcome {
+#welcomescreen {
     position: absolute;
     z-index: 9;
     text-align: center;
@@ -55,6 +55,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 #welcomeheader {
@@ -79,6 +80,51 @@ body {
 }
 
 #welcomeclose:hover {
+    background-color: darkred;
+    transition: 0.1s;
+}
+
+#calcscreen {
+    position: absolute;
+    z-index: 9;
+    text-align: center;
+    display: flex;
+    display: none;
+    flex-direction: column;
+    width: 200px;
+    background-color: rgba(67, 67, 67, 0.25);
+    backdrop-filter: blur(16px);
+    border-radius: 10px;
+    color: #fff;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#calcheader {
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: move;
+  z-index: 10;
+
+
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#calcclose {
+  background-color: red;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#calcclose:hover {
     background-color: darkred;
     transition: 0.1s;
 }
