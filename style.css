@@ -94,3 +94,52 @@ body {
 
 
 }
+
+.clock-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* The Dropdown Panel Styling */
+#gnome-panel {
+    position: absolute;
+    top: calc(100% + 8px); /* Appears just under the topbar */
+    left: 50%;
+    transform: translateX(-50%); /* Centers it directly under the time text */
+    
+    width: 280px;
+    background-color: rgba(45, 45, 45, 0.85);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: white;
+    padding: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    z-index: 9999; /* Ensures it sits over windows */
+}
+
+/* Panel Internal Styling */
+.panel-section h3 {
+    margin: 0 0 5px 0;
+    font-size: 13px;
+    color: #ccc;
+}
+
+.placeholder-text {
+    margin: 0;
+    font-size: 12px;
+    color: #777;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.panel-divider {
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 8px 0;
+}
+
+/* Utility class to handle hiding/showing elements */
+.hidden {
+    display: none !important;
+}

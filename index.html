@@ -15,9 +15,23 @@
 
     <div class="topbar">
             <p style="cursor: pointer" id="welcomeopen">CasOS</p>
-             <p id="clock" class="clocklook" style="padding: 10px 10px;">
-                00:00
-            </p>
+            <div class="clock-container">
+                 <p id="clock" class="clocklook" style="padding: 10px 10px;">
+                    00:00
+                 </p>
+
+        <div id="gnome-panel" class="hidden">
+            <div class="panel-section">
+                <h3>Calendar</h3>
+                <p class="placeholder-text">No upcoming events</p>
+            </div>
+            <hr class="panel-divider">
+            <div class="panel-section">
+                <h3>Notifications</h3>
+                <p class="placeholder-text">Clear as a bell!</p>
+            </div>
+        </div>
+    </div>
             <div style="display: flex; align-items: center;">
                 <img src="https://www.svgrepo.com/show/509313/battery-charge.svg" alt="Battery Icon" class="battery-icon">
                 100%

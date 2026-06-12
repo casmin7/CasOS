@@ -1,60 +1,76 @@
-
 function timeUpdate() {
-
-var zeclock = new Date();
-document.getElementById("clock").innerHTML = zeclock.getHours() + ":" + zeclock.getMinutes();
-// var timeText = document.querySelector("#clock");
-// timeText.innerHTML = currentTime
+    var now = new Date();
+    
+    // Clean GNOME-style 24h formatting
+    var gnomeFormat = now.toLocaleDateString([], {
+        weekday: 'short',
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+    });
+    
+    var cleanFormat = gnomeFormat.replace(',', '');
+    document.getElementById("clock").innerHTML = cleanFormat;
 }
 
 timeUpdate();
 setInterval(timeUpdate, 1000);
 
+// Toggle the Calendar Panel
+var clockElement = document.getElementById("clock");
+var gnomePanel = document.getElementById("gnome-panel");
 
-// Make the DIV element draggable:
+clockElement.addEventListener("click", function(e) {
+    gnomePanel.classList.toggle("hidden");
+    e.stopPropagation(); // Stops the window listener below from immediately hiding it
+});
+
+// Click outside to close the panel
+window.addEventListener("click", function(e) {
+    if (!gnomePanel.contains(e.target) && e.target !== clockElement) {
+        gnomePanel.classList.add("hidden");
+    }
+});
+
+
+// --- Your Existing Draggable Window Logic (Keep exactly as you have it) ---
 dragElement(document.getElementById("welcome"));
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
   if (document.getElementById(elmnt.id + "header")) {
-
     document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
-    } else {
+  } else {
     elmnt.onmousedown = dragMouseDown;
   }
 
-function dragMouseDown(e) {
+  function dragMouseDown(e) {
     e = e || window.event;
     e.preventDefault();
-    // get the mouse cursor position at startup:
     pos3 = e.clientX;
     pos4 = e.clientY;
     document.onmouseup = closeDragElement;
-    // call a function whenever the cursor moves:
     document.onmousemove = elementDrag;
   }
 
   function elementDrag(e) {
     e = e || window.event;
     e.preventDefault();
-    // calculate the new cursor position:
     pos1 = pos3 - e.clientX;
     pos2 = pos4 - e.clientY;
     pos3 = e.clientX;
     pos4 = e.clientY;
-    // set the element's new position:
     elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
     elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
   }
 
   function closeDragElement() {
-    // stop moving when mouse button is released:
     document.onmouseup = null;
     document.onmousemove = null;
   }
 }
-
-
 
 var welcomeScreen = document.getElementById("welcome");
 
@@ -63,16 +79,16 @@ function closeWindow(element) {
 }
 
 function openWindow(element) {
-  element.style.display = "flex"
+  element.style.display = "flex";
 }
 
-var welcomeScreenClose = document.querySelector("#welcomeclose")
-var welcomeScreenOpen = document.querySelector("#welcomeopen")
+var welcomeScreenClose = document.querySelector("#welcomeclose");
+var welcomeScreenOpen = document.querySelector("#welcomeopen");
 
 welcomeScreenClose.addEventListener("click", function() {
-  closeWindow(welcomeScreen);
+   closeWindow(welcomeScreen);
 });
 
 welcomeScreenOpen.addEventListener("click", function() {
-  openWindow(welcomeScreen);
+   openWindow(welcomeScreen);
 });
