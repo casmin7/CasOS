@@ -1,8 +1,8 @@
 
 function timeUpdate() {
 
-var zeclock = new Date().toLocaleString();
-document.getElementById("clock").innerHTML = zeclock;
+var zeclock = new Date();
+document.getElementById("clock").innerHTML = zeclock.getHours() + ":" + zeclock.getMinutes();
 // var timeText = document.querySelector("#clock");
 // timeText.innerHTML = currentTime
 }
