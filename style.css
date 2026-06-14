@@ -43,7 +43,6 @@ body {
 /* Window Properties */
 [id$="screen"] {
     position: absolute;
-    z-index: 9;
     text-align: center;
     display: flex;
     display: none;
