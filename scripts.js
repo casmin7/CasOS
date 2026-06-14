@@ -35,7 +35,14 @@ window.addEventListener("click", function(e) {
 });
 
 
+var highestZIndex = 5;
 
+function updateZindex(element) {
+  if (element.style.zIndex < highestZIndex) {
+    highestZIndex++;
+    element.style.zIndex = highestZIndex;
+  }
+}
 
 
 function dragElement(elmnt) {
@@ -78,6 +85,7 @@ function closeWindow(element) {
 
 function openWindow(element) {
   element.style.display = "flex";
+  updateZindex(element);
 }
 
 // var welcomeScreen = document.getElementById("welcomescreen");
@@ -100,14 +108,18 @@ function windowSetup(name) {
   var windowScreenOpen = document.querySelector("#" + name + "open");
 
   windowScreenClose.addEventListener("click", function() {
-   closeWindow(windowScreen);
-});
+    closeWindow(windowScreen);
+  });
 
-windowScreenOpen.addEventListener("click", function() {
-   openWindow(windowScreen);
-});
+  windowScreenOpen.addEventListener("click", function() {
+    openWindow(windowScreen);
+  });
 
-dragElement(windowScreen);
+  windowScreen.addEventListener("mousedown", function() {
+    updateZindex(windowScreen);
+  });
+
+  dragElement(windowScreen);
 }
 
 windowSetup("welcome");
