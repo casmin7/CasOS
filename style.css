@@ -10,18 +10,17 @@ body {
 .topbar {
     display: flex; 
     justify-content: space-between;
-    background-color: rgba(67, 67, 67, 0.3);
+    background-color: rgba(67, 67, 67, 0.25);
     color: white;
-    border-radius: 10px;
+    border-radius: 16px;
     backdrop-filter: blur(16px);
     position: absolute;
     top: 10px;
     left: 10px;
     right: 10px;
-    padding: 0px 10px;
+    padding: 4px;
     align-items: center;
     border: 1px solid rgba(255, 255, 255, 0.1);
-
     
 }
 
@@ -89,14 +88,16 @@ body {
 
 /* Clock & Clock Panel */
 .clocklook {
-    border-radius: 10px; 
-    padding: 10px 10px; 
+    border-radius: 12px; 
+    padding: 10px;
+    transition: 0.1s;
+    background-color: rgba(67, 67, 67, 0.6);
       
 }
 
 
 .clocklook:hover {
-    background-color: rgba(67, 67, 67, 0.5);
+    background-color: rgba(67, 67, 67, 0.85);
     transition: 0.2s;
     cursor: pointer;
 
@@ -111,7 +112,7 @@ body {
 
 #gnome-panel {
     position: absolute;
-    top: calc(100% + 8px); 
+    top: calc(100% + 10px); 
     left: 50%;
     transform: translateX(-50%); 
     
@@ -119,7 +120,7 @@ body {
     background-color: rgba(67, 67, 67, 0.85);
     backdrop-filter: blur(25px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
+    border-radius: 10px;
     color: white;
     padding: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
