@@ -123,3 +123,95 @@ function windowSetup(name) {
 
 windowSetup("welcome");
 windowSetup("calc");
+
+
+
+let currentInput = '0';
+let historyExpression = '';
+let isEvaluated = false;
+
+const inputDisplay = document.getElementById('calc-input');
+const historyDisplay = document.getElementById('calc-history');
+
+function updateDisplay() {
+    inputDisplay.innerText = currentInput;
+    historyDisplay.innerText = historyExpression;
+}
+
+function appendNumber(num) {
+    if (isEvaluated) {
+        currentInput = num === '.' ? '0.' : num;
+        isEvaluated = false;
+    } else {
+        if (num === '.' && currentInput.includes('.')) return; // No duplicate decimals
+        if (currentInput === '0' && num !== '.') {
+            currentInput = num;
+        } else {
+            currentInput += num;
+        }
+    }
+    updateDisplay();
+}
+
+function appendOperator(op) {
+    if (isEvaluated) {
+        historyExpression = currentInput + ' ' + op + ' ';
+        isEvaluated = false;
+        currentInput = '0';
+    } else {
+        // If there's an active entry input, push it to history expression
+        if (currentInput !== '0' || historyExpression === '') {
+            historyExpression += currentInput + ' ' + op + ' ';
+            currentInput = '0';
+        } else if (historyExpression.length > 0) {
+            // Replaces the last chosen operator if you change your mind mid-process
+            historyExpression = historyExpression.trim().slice(0, -1) + op + ' ';
+        }
+    }
+    updateDisplay();
+}
+
+function calculateResult() {
+    if (historyExpression === '') return;
+    
+    // Construct the complete functional expression string
+    let fullExpression = historyExpression + currentInput;
+    
+    try {
+        // Use standard JS internal math evaluation safely via strict numeric parameters
+        let result = Function('"use strict";return (' + fullExpression + ')')();
+        
+        // Formats long floating-point precision numbers neatly
+        if (result.toString().includes('.') && result.toString().split('.')[1].length > 4) {
+            result = parseFloat(result.toFixed(4));
+        }
+        
+        historyExpression = fullExpression + ' =';
+        currentInput = result.toString();
+        isEvaluated = true;
+    } catch (error) {
+        currentInput = 'Error';
+        historyExpression = '';
+    }
+    updateDisplay();
+}
+
+function clearCalc() {
+    currentInput = '0';
+    historyExpression = '';
+    isEvaluated = false;
+    updateDisplay();
+}
+
+function deleteLast() {
+    if (isEvaluated) {
+        clearCalc();
+        return;
+    }
+    if (currentInput.length > 1) {
+        currentInput = currentInput.slice(0, -1);
+    } else {
+        currentInput = '0';
+    }
+    updateDisplay();
+}

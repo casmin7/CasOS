@@ -39,32 +39,76 @@
     </div>
 
 
-    <div id="welcomescreen">
-         <div id="welcomescreenheader">Info
-            <p id="welcomeclose"></p>
-
-         </div>
-    <div>
+  <div id="welcomescreen">
+    <div id="welcomescreenheader">
+        <div style="display: flex; align-items: center;">
+            <img src="icons/info.svg" alt="Info Icon" class="battery-icon">Info
+        </div>
+        <p id="welcomeclose"></p>
+    </div>
+    
+    <div class="window-body">
+        <div class="forwindows">
+            <img class="profile-pic" src="https://avatars.githubusercontent.com/u/81086112?v=4" alt="Profile Picture">
+            
+            <div class="info-text-side">
+                <h2>Casmin7</h2>
+                <p class="bio-text">This is CasOS, a webOS inspired by the guide provided by Stradance. It is WIP.</p>
                 
-        <div>
-            <h1>
-            <img src="icons/instagram-logo-facebook-2-svgrepo-com.svg" alt="Instagram-link" class="battery-icon"><a href="https://www.instagram.com/casmin7_/">Instagram</a>
-
-            <img src="icons/instagram-logo-facebook-2-svgrepo-com.svg" alt="Instagram-link" class="battery-icon"><a href="mailto:cosmin.ciurevici2017@gmail.com">cosmin.ciurevici2017@gmail.com</a>
-        </h1>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/casmin7_/" target="_blank" rel="noopener noreferrer">
+                        <img src="icons/insta.svg" alt="Instagram" class="social-icon">
+                    </a>
+                    <a href="mailto:cosmin.ciurevici2017@gmail.com">
+                        <img src="icons/email.svg" alt="Email" class="social-icon">
+                    </a>
+                    <a href="https://github.com/casmin7">
+                        <img src="icons/github.svg" alt="Github" class="social-icon">
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
-    </div>
+</div>
 
-     <div id="calcscreen">
-         <div id="calcscreenheader">Calculator
-            <p id="calcclose"></p>
+<div id="calcscreen">
+    <div id="calcscreenheader">
+        <span>Calculator</span>
+        <p id="calcclose"></p>
+    </div>
+    
+    <div class="calc-body">
+        <div class="calc-display">
+            <div id="calc-history"></div>
+            <div id="calc-input">0</div>
+        </div>
+        
+        <div class="calc-grid">
+            <button class="btn btn-op" onclick="clearCalc()">C</button>
+            <button class="btn btn-op" onclick="appendOperator('/')">÷</button>
+            <button class="btn btn-op" onclick="appendOperator('*')">×</button>
+            <button class="btn btn-op" onclick="deleteLast()">⌫</button>
 
-         </div>
-    <div style="background-color: #fff; color: #000;">
-        <p>Hello World</p>
+            <button class="btn" onclick="appendNumber('7')">7</button>
+            <button class="btn" onclick="appendNumber('8')">8</button>
+            <button class="btn" onclick="appendNumber('9')">9</button>
+            <button class="btn btn-op" onclick="appendOperator('-')">−</button>
+
+            <button class="btn" onclick="appendNumber('4')">4</button>
+            <button class="btn" onclick="appendNumber('5')">5</button>
+            <button class="btn" onclick="appendNumber('6')">6</button>
+            <button class="btn btn-op" onclick="appendOperator('+')">+</button>
+
+            <button class="btn" onclick="appendNumber('1')">1</button>
+            <button class="btn" onclick="appendNumber('2')">2</button>
+            <button class="btn" onclick="appendNumber('3')">3</button>
+            <button class="btn btn-equals" onclick="calculateResult()">=</button>
+
+            <button class="btn btn-zero" onclick="appendNumber('0')">0</button>
+            <button class="btn" onclick="appendNumber('.')">.</button>
+        </div>
     </div>
-    </div>
+</div>
 
 
 

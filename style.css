@@ -46,7 +46,7 @@ body {
     display: flex;
     display: none;
     flex-direction: column;
-    width: 15rem;
+    /* width: 15rem; */
     background-color: rgba(67, 67, 67, 0.25);
     backdrop-filter: blur(16px);
     border-radius: 16px;
@@ -56,6 +56,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    width: max-content;
 }
 
 [id$="header"] {
@@ -151,4 +152,204 @@ body {
 
 .hidden {
     display: none !important;
+}
+
+
+
+.social-icon {
+  
+    height: 50px; 
+    /* width: auto; */
+    
+
+    vertical-align: middle;
+    margin-right: 5px;
+
+
+    filter: brightness(0) invert(1);
+}
+
+/* Container for the window's content */
+.window-content {
+    padding: 20px;
+    background-color: rgba(30, 30, 30, 0.4); /* Adds slightly deeper background contrast */
+}
+
+/* Adjusting the main container flex layout */
+/* Container for padding around the window contents */
+.window-body {
+    padding: 12px;
+}
+
+/* Master row layout */
+.forwindows {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+/* Forces the avatar to stay a perfect, unstretched square */
+.profile-pic {
+    width: 140px;
+    height: 140px;
+    object-fit: cover; /* Prevents the image asset from distorting */
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    flex-shrink: 0; /* Prevents flexbox from squeezing the image width */
+}
+
+/* Right side vertical layout column */
+.info-text-side {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 8px;
+}
+
+.info-text-side h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.bio-text {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Forces social links to sit side-by-side horizontally */
+.social-links {
+    display: flex;
+    flex-direction: row; 
+    gap: 16px;
+    margin-top: 4px;
+}
+
+.social-links a {
+    display: inline-flex;
+    transition: transform 0.2s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-2px);
+}
+
+/* UI scale correction for social icons */
+.social-icon {
+    height: 24px;
+    width: 24px;
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+}
+
+.social-links a:hover .social-icon {
+    opacity: 1;
+}
+
+/* Calculator Container Outer Setup */
+.calc-body {
+    /* Inherits your native webOS window theme background instead of solid black */
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Screen Panel Display */
+.calc-display {
+    padding: 24px 16px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 100px;
+    box-sizing: border-box;
+    /* Semi-dark overlay for the screen text area to guarantee legibility */
+    background-color: rgba(0, 0, 0, 0.2); 
+    border-radius: 12px;
+    margin: 10px;
+}
+
+#calc-history {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6); /* Adjusted from gray to transparent white */
+    min-height: 1.2rem;
+    word-wrap: break-word;
+    margin-bottom: 4px;
+}
+
+#calc-input {
+    font-size: 2.2rem;
+    color: #ffffff;
+    font-weight: 300;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+/* Grid Layout for Keys */
+.calc-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    padding: 16px;
+    /* Transparent background to let the window backdrop-filter shine through */
+    background-color: transparent; 
+}
+
+/* Core Buttons matches your .clocklook styling */
+.btn {
+    border: none;
+    outline: none;
+    background-color: rgba(67, 67, 67, 0.6);
+    color: #ffffff;
+    font-size: 1.4rem;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.1s ease;
+    font-family: inherit;
+}
+
+/* Hover effect matching your main OS panel elements */
+.btn:hover {
+    background-color: rgba(67, 67, 67, 0.85);
+}
+
+.btn:active {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Specific Style Variations */
+.btn-op {
+    /* Using your system accent or keeping a translucent blue accent */
+    background-color: rgba(75, 94, 254, 0.6);
+    color: #ffffff;
+}
+
+.btn-op:hover {
+    background-color: rgba(75, 94, 254, 0.8);
+}
+
+.btn-equals {
+    background-color: rgba(34, 197, 94, 0.6);
+    color: #ffffff;
+    grid-row: span 2;
+    height: auto;
+    border-radius: 30px;
+}
+
+.btn-equals:hover {
+    background-color: rgba(34, 197, 94, 0.8);
+}
+
+.btn-zero {
+    grid-column: span 2;
+    border-radius: 30px;
 }
