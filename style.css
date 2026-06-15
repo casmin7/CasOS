@@ -111,7 +111,7 @@ body {
 }
 
 
-#gnome-panel {
+#clock-panel {
     position: absolute;
     top: calc(100% + 10px); 
     left: 50%;

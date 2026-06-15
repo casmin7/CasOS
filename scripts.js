@@ -19,21 +19,28 @@ timeUpdate();
 setInterval(timeUpdate, 1000);
 
 // Toggle the Calendar Panel
-var clockElement = document.getElementById("clock");
-var gnomePanel = document.getElementById("gnome-panel");
+
+
+
+
+function togglePanels(element) {
+var clockElement = document.getElementById(element);
+var clockPanel = document.getElementById(element + "-panel");
 
 clockElement.addEventListener("click", function(e) {
-    gnomePanel.classList.toggle("hidden");
+    clockPanel.classList.toggle("hidden");
     e.stopPropagation(); // Stops the window listener below from immediately hiding it
 });
 
 // Click outside to close the panel
 window.addEventListener("click", function(e) {
-    if (!gnomePanel.contains(e.target) && e.target !== clockElement) {
-        gnomePanel.classList.add("hidden");
+    if (!clockPanel.contains(e.target) && e.target !== clockElement) {
+        clockPanel.classList.add("hidden");
     }
 });
+}
 
+togglePanels("clock");
 
 var highestZIndex = 5;
 
