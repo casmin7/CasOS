@@ -7,7 +7,7 @@ A simple begginer made webOS made just with HTML, CSS, JS.
 Features:
   - Panels similar to GNOME
   - draggable windows with auto z-index
-  - Apps (Info app, calculator, weather, etc.)
+  - Apps (Info app, calculator, etc.)
 
-To try just visit: ~https://casos.casmin.eu~
+To try just visit: https://casos.casmin.eu
   
