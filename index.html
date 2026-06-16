@@ -14,7 +14,19 @@
 
 
     <div class="topbar">
-            <p style="cursor: pointer; margin: 0;" id="welcomeopen" class="clocklook">CasOS</p>
+        <div class="clock-container" style="margin: 0;">
+            <p style="cursor: pointer; margin: 0;" id="appselect" class="clocklook">CasOS</p>
+            <div id="appselect-panel" class="hidden">
+                <div class="panel-section">
+                    <div id="welcomeopen" class="openbuttons">
+                        <img src="icons/info.svg" alt="Info Icon" class="battery-icon">Info
+                    </div>
+                    <div id="calcopen" class="openbuttons">
+                        <img src="icons/calc.svg" alt="Calculator Icon" class="battery-icon">Calculator
+                    </div>
+                </div>
+            </div>
+        </div>
             <div class="clock-container" style="margin: 0;">
                  <p id="clock" class="clocklook" style="margin: 0;">
                     00:00
@@ -32,7 +44,7 @@
             </div>
         </div>
     </div>
-            <div style="display: flex; align-items: center;" id="calcopen" class="clocklook">
+            <div style="display: flex; align-items: center;" class="clocklook">
                 <img src="https://www.svgrepo.com/show/509313/battery-charge.svg" alt="Battery Icon" class="battery-icon">
                 100%
             </div>

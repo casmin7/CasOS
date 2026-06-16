@@ -41,6 +41,7 @@ window.addEventListener("click", function(e) {
 }
 
 togglePanels("clock");
+togglePanels("appselect");
 
 var highestZIndex = 5;
 
