@@ -20,8 +20,20 @@ setInterval(timeUpdate, 1000);
 
 // Toggle the Calendar Panel
 
+function notificationUpdate(message) {
+  const notificationArea = document.getElementById("notification-area");
+  var notificationHtml = "<div>" + message + "</div>";
 
+  if(notificationArea.innerHTML == "Clear as a bell!"){
+      notificationArea.innerHTML = notificationHtml;
+  }
+  else {
+      notificationArea.innerHTML += notificationHtml;
+  }
 
+}
+
+notificationUpdate("New message received!");
 
 function togglePanels(element) {
 var clockElement = document.getElementById(element);
