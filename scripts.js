@@ -95,20 +95,6 @@ function openWindow(element) {
   updateZindex(element);
 }
 
-// var welcomeScreen = document.getElementById("welcomescreen");
-// var welcomeScreenClose = document.querySelector("#welcomeclose");
-// var welcomeScreenOpen = document.querySelector("#welcomeopen");
-
-// welcomeScreenClose.addEventListener("click", function() {
-//    closeWindow(welcomeScreen);
-// });
-
-// welcomeScreenOpen.addEventListener("click", function() {
-//    openWindow(welcomeScreen);
-// });
-
-// dragElement(welcomeScreen);
-
 function windowSetup(name) {
   var windowScreen = document.getElementById(name + "screen");
   var windowScreenClose = document.querySelector("#" + name + "close");
