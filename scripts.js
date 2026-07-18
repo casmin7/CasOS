@@ -22,7 +22,7 @@ setInterval(timeUpdate, 1000);
 
 function notificationUpdate(message, origin) {
   const notificationArea = document.getElementById("notification-area");
-  var notificationHtml = "<div class='" + origin + "-open'>" + message + "</div>";
+  var notificationHtml = "<div class='" + origin + "-open notificationpill'>" + message + "</div>";
 
   if(notificationArea.innerHTML == "Clear as a bell!"){
       notificationArea.innerHTML = notificationHtml;
