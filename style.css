@@ -4,6 +4,7 @@ body {
     background-image: url('backgrounds/strawberry-wallpaper-mural-plain.jpg');
     background-size: cover;
     font-family: 'Funnel Sans';
+    overflow: hidden;
 }
 
 
@@ -43,7 +44,6 @@ body {
 [id$="screen"] {
     position: absolute;
     text-align: center;
-    display: flex;
     display: none;
     flex-direction: column;
     /* width: 15rem; */

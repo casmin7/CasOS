@@ -20,9 +20,9 @@ setInterval(timeUpdate, 1000);
 
 // Toggle the Calendar Panel
 
-function notificationUpdate(message) {
+function notificationUpdate(message, origin) {
   const notificationArea = document.getElementById("notification-area");
-  var notificationHtml = "<div>" + message + "</div>";
+  var notificationHtml = "<div class='" + origin + "-open'>" + message + "</div>";
 
   if(notificationArea.innerHTML == "Clear as a bell!"){
       notificationArea.innerHTML = notificationHtml;
@@ -33,7 +33,7 @@ function notificationUpdate(message) {
 
 }
 
-notificationUpdate("New message received!");
+notificationUpdate("New message received!", "calc");
 
 function togglePanels(element) {
 var clockElement = document.getElementById(element);
@@ -110,14 +110,16 @@ function openWindow(element) {
 function windowSetup(name) {
   var windowScreen = document.getElementById(name + "screen");
   var windowScreenClose = document.querySelector("#" + name + "close");
-  var windowScreenOpen = document.querySelector("#" + name + "open");
+  var windowScreenOpenButtons = document.querySelectorAll("." + name + "-open");
 
   windowScreenClose.addEventListener("click", function() {
     closeWindow(windowScreen);
   });
 
-  windowScreenOpen.addEventListener("click", function() {
-    openWindow(windowScreen);
+  windowScreenOpenButtons.forEach(function(button) {
+    button.addEventListener("click", function() {
+      openWindow(windowScreen);
+    });
   });
 
   windowScreen.addEventListener("mousedown", function() {
