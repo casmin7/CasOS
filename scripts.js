@@ -34,6 +34,9 @@ function notificationUpdate(message, origin) {
 }
 
 notificationUpdate("New message received!", "calc");
+notificationUpdate("New message received!", "calc");
+notificationUpdate("New message received!", "calc");
+
 
 function togglePanels(element) {
 var clockElement = document.getElementById(element);
